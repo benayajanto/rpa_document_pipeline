@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# Backend runtime
+backend/instance/
+backend/*.db
+backend/sample_data/generated/
+.env
+*.env
+!.env.example
+.pytest_cache/
+
+# Node / Next.js
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.env*.local
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Session handoff / internal notes — not for the public repo
+CLAUDE.md

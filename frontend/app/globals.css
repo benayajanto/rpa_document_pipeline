@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+:root {
+  --background: #eff6ff;
+  --foreground: #1e293b;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+a {
+  @apply text-blue-600 hover:text-blue-800;
+}
+
+/* A file card sliding out of the upload queue when removed or replaced. */
+.card-exit {
+  animation: card-exit 0.35s ease-in-out forwards;
+}
+
+@keyframes card-exit {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  60% {
+    opacity: 0.4;
+    transform: translateY(-6px) scale(0.98);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-16px) scale(0.96);
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+  }
+}
+
+/* A brief highlight flash when a file finishes extracting successfully. */
+.card-success-flash {
+  animation: card-success-flash 0.6s ease-in-out;
+}
+
+@keyframes card-success-flash {
+  0%,
+  100% {
+    background-color: rgb(240 253 244);
+  }
+  40% {
+    background-color: rgb(220 252 231);
+  }
+}
